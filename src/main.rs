@@ -1,6 +1,9 @@
 use glfw::{Action, Context, Key};
 use gl::*;
 
+mod shader;
+mod handle;
+
 fn main() {
     let mut glfw = glfw::init(glfw::fail_on_errors).unwrap();
 
@@ -15,8 +18,10 @@ fn main() {
 
     unsafe {
         gl::Viewport(0, 0, 1280, 800);
-        gl::ClearColor(0.5, 0.0, 0.0, 1.0);
+        gl::ClearColor(0.0, 0.6, 0.8, 1.0);
     }
+
+
 
     while !window.should_close() {
         glfw.poll_events();
@@ -25,7 +30,7 @@ fn main() {
         }
 
         unsafe {
-            gl::Clear(gl::COLOR_BUFFER_BIT)
+            gl::Clear(gl::COLOR_BUFFER_BIT);
         };
 
         window.swap_buffers();
