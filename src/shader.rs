@@ -3,10 +3,7 @@ use gl::*;
 use std::io;
 use crate::handle::*;
 
-pub struct CompiledSuccesfully;
-
-pub struct CompiledWithErrors;
-
+pub struct AttempedCompile;
 pub struct NotCompiled;
 
 pub struct Shader<State = NotCompiled> {
