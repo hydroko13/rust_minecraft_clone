@@ -4,6 +4,10 @@ use gl::*;
 mod shader;
 mod handle;
 
+use crate::shader::Shader;
+
+
+
 fn main() {
     let mut glfw = glfw::init(glfw::fail_on_errors).unwrap();
 
@@ -21,6 +25,9 @@ fn main() {
         gl::ClearColor(0.0, 0.6, 0.8, 1.0);
     }
 
+    let shader1: Shader = Shader::from_file();
+
+    
 
 
     while !window.should_close() {
